@@ -111,59 +111,15 @@ sudo apt-get install libdw-dev
 sudo apt-get install ros-${YOUR-ROS-VERSION}-mavros* ros-${YOUR-ROS-VERSION}-pcl* ros-${YOUR-ROS-VERSION}-rosfmt
 ```
 
-Before building the code, select the appropriate ROS version:
-
-```bash
-# Use ROS1-noetic
-bash ${PATH-TO-SUPER}/SUPER/scripts/select_ros_version.sh ROS1
-# Use ROS2
-bash ${PATH-TO-SUPER}/SUPER/scripts/select_ros_version.sh ROS2
-```
-
 Tested Environments:
 
-* Ubuntu 20.04 + ROS1 Noetic
-* Ubuntu 20.04 + ROS2 foxy
+* Ubuntu 22.04 + ROS2 Humble
 * ...
-
-Currently, **ROS1 Noetic** serves as the **Tier 1** supported platform for SUPER. The ROS2 version is still under development and may be unstable, with some issues such as imperfect visualization. We are actively working on improvements.
 
 ### Known Build issues
 
 * ...
 
-## 2.2  ROS1 (Noetic) Installation
-```bash
-mkdir -p super_ws/src && cd super_ws/src
-git clone https://github.com/hku-mars/SUPER.git
-cd ..
-catkin_make -DBUILD_TYPE=Release
-```
-
-To test, use one of the following commands:
-
-1. **High-Speed Navigation**
-
-```bash
-cd ${PATH-TO-WS}
-source devel/setup.bash
-roslaunch mission_planner benchmark_high_speed.launch
-```
-
-2. **Agile Flight in Dense Environments**
-
-```bash
-cd ${PATH-TO-WS}
-source devel/setup.bash
-roslaunch mission_planner benchmark_dense.launch
-```
-
-3. **Click and Go Demo**
-
-```
-roslaunch mission_planner click_demo.launch 
-```
-In the click demo, press `G` to enable the `2D Goal Pose` plugin, then click a position in RViz to set the goal.
 ## 2.3 ROS2
 
 
